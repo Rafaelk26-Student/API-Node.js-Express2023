@@ -1,0 +1,35 @@
+{
+  "name": "api-node-express",
+  "version": "1.0.0",
+  "description": "API com Node framework express",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rafaelk26-Student/API-Node.js-Express2023.git"
+  },
+  "keywords": [
+    "api",
+    "node",
+    "javascript",
+    "express",
+    "2023",
+    "mvc"
+  ],
+  "author": "Rafaelk26",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rafaelk26-Student/API-Node.js-Express2023/issues"
+  },
+  "homepage": "https://github.com/Rafaelk26-Student/API-Node.js-Express2023#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
