@@ -2,7 +2,9 @@
 // const express = require('express')
 // Constante definida para utilização das rotas
 import express from 'express'
-import userRouter from './routes/userRouter.js'
+import userRouter from './routers/userRouter.js'
+import productRouter from './routers/productRouter.js'
+import authRouter from './routers/authRouter.js'
 
 const Router = express.Router()
 const api = express()
@@ -28,7 +30,10 @@ api.delete('/', (req, res) => {
     res.json({message: "Método delete"})
 })
 
-api.use('/user', userRouter)
+api.use('/user', userRouter);
+api.use('/produto', productRouter);
+api.use('/auth', authRouter);
+
 
 // Inicializando o servidor na porta 3000 utilizando api.listen
 api.listen(3000, ()=>{
