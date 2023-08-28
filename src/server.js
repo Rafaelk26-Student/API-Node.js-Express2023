@@ -5,9 +5,15 @@ import express from 'express'
 import userRouter from './routers/userRouter.js'
 import productRouter from './routers/productRouter.js'
 import authRouter from './routers/authRouter.js'
+import { port } from './config.js'
+import bodyParser from 'body-parser'
 
 const Router = express.Router()
 const api = express()
+
+
+// converte toda requisição com body json para objeto no req.body
+api.use(bodyParser.json())
 
 // Primeira rota configurada "/ <- Home"
 api.get('/', (req, res) => {
@@ -36,7 +42,7 @@ api.use('/auth', authRouter);
 
 
 // Inicializando o servidor na porta 3000 utilizando api.listen
-api.listen(3000, ()=>{
-    console.log("Rodando servidor na porta 3000. http://localhost:3000")
+api.listen(port, ()=>{
+    console.log(`Rodando servidor na porta ${port}. http://localhost:${port}`)
 })
 
