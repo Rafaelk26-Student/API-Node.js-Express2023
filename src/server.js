@@ -8,7 +8,6 @@ import authRouter from './routers/authRouter.js'
 import { port } from './config.js'
 import bodyParser from 'body-parser'
 
-const Router = express.Router()
 const api = express()
 
 
@@ -21,20 +20,6 @@ api.get('/', (req, res) => {
     res.json({message: "Bem-Vindo a nossa API!"})
 })
 
-api.post('/', (req, res) => {
-    // Retorna um objeto json com uma mensagem simples
-    res.json({message: "Método post"})
-})
-
-api.put('/', (req, res) => {
-    // Retorna um objeto json com uma mensagem simples
-    res.json({message: "Método put"})
-})
-
-api.delete('/', (req, res) => {
-    // Retorna um objeto json com uma mensagem simples
-    res.json({message: "Método delete"})
-})
 
 api.use('/user', userRouter);
 api.use('/produto', productRouter);

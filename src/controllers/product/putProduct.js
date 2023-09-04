@@ -1,15 +1,15 @@
-import user from '../../models/userModel.js'
+import produto from '../../models/produtoModel.js'
 
 
 const putUser = async (req, res) => {
     try{
-        const userData = req.body
-        const [result] = await user.update(userData)
+        const produtoData = req.body
+        const [result] = await produto.update(produtoData)
         if(result.affectedRows === 1 ){
             res.json({
-                success:"Usuário alterado com sucesso",
+                success:"Produto alterado com sucesso",
                 user: {
-                    ...userData
+                    ...produtoData
                 }
             })
         }
