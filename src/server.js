@@ -7,11 +7,13 @@ import productRouter from './routers/productRouter.js'
 import authRouter from './routers/authRouter.js'
 import { port } from './config.js'
 import bodyParser from 'body-parser'
+import cors from 'cors'
 
 const api = express()
 
 
 // converte toda requisição com body json para objeto no req.body
+api.use(cors())
 api.use(bodyParser.json())
 
 // Primeira rota configurada "/ <- Home"
